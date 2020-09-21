@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ratel.mall.content.mapper.CmsHelpCategoryMapper">
+  <resultMap id="BaseResultMap" type="com.ratel.mall.content.pojo.po.CmsHelpCategory">
+    <!--@mbg.generated-->
+    <!--@Table cms_help_category-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="icon" jdbcType="VARCHAR" property="icon" />
+    <result column="help_count" jdbcType="INTEGER" property="helpCount" />
+    <result column="show_status" jdbcType="INTEGER" property="showStatus" />
+    <result column="sort" jdbcType="INTEGER" property="sort" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, `name`, icon, help_count, show_status, sort
+  </sql>
+</mapper>
