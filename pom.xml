@@ -22,7 +22,23 @@
         <version>2.1.7.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-
+    <properties>
+        <ratel.common.version>1.0-SNAPSHOT</ratel.common.version>
+        <springBoot.validation.version>2.1.13.RELEASE</springBoot.validation.version>
+        <easy.captcha.version>1.6.2</easy.captcha.version>
+        <ip2region.version>1.7.2</ip2region.version>
+        <jsoup.version>1.8.3</jsoup.version>
+        <mapstruct.version>1.2.0.Final</mapstruct.version>
+        <easyexcel.version>2.1.6</easyexcel.version>
+        <jwt.version>0.9.0</jwt.version>
+        <druid.version>1.1.13</druid.version>
+        <mybatisPlus.version>3.2.0</mybatisPlus.version>
+        <swagger2.version>2.9.2</swagger2.version>
+        <druid.version>1.1.10</druid.version>
+        <shiro.version>1.4.0</shiro.version>
+        <shiro.redis.version>2.4.2.1-RELEASE</shiro.redis.version>
+        <mapstruct.version>1.2.0.Final</mapstruct.version>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -56,27 +72,12 @@
         </dependency>
     </dependencies>
 
-    <properties>
-        <ratel.common.version>1.0-SNAPSHOT</ratel.common.version>
-        <springBoot.validation.version>2.1.13.RELEASE</springBoot.validation.version>
-        <easy.captcha.version>1.6.2</easy.captcha.version>
-        <ip2region.version>1.7.2</ip2region.version>
-        <jsoup.version>1.8.3</jsoup.version>
-        <mapstruct.version>1.2.0.Final</mapstruct.version>
-        <easyexcel.version>2.1.6</easyexcel.version>
-        <jwt.version>0.9.0</jwt.version>
-        <druid.version>1.1.13</druid.version>
-        <mybatisPlus.version>3.2.0</mybatisPlus.version>
-        <swagger2.version>2.9.2</swagger2.version>
-        <druid.version>1.1.10</druid.version>
-    </properties>
-
     <dependencyManagement>
         <dependencies>
             <!-- common-模块-->
             <dependency>
-                <groupId>ratel-mall-common</groupId>
-                <artifactId>com.ratel</artifactId>
+                <groupId>com.ratel</groupId>
+                <artifactId>ratel-mall-common</artifactId>
                 <version>${ratel.common.version}</version>
             </dependency>
             <!-- MyBatis Plus-->
@@ -125,6 +126,24 @@
                 <artifactId>easyexcel</artifactId>
                 <version>${easyexcel.version}</version>
             </dependency>
+            <!-- shiro-spring -->
+            <dependency>
+                <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-spring</artifactId>
+                <version>${shiro.version}</version>
+            </dependency>
+            <!-- shiro-redis -->
+            <dependency>
+                <groupId>org.crazycake</groupId>
+                <artifactId>shiro-redis</artifactId>
+                <version>${shiro.redis.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>jedis</artifactId>
+                        <groupId>redis.clients</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
             <!-- JWT -->
             <dependency>
                 <groupId>io.jsonwebtoken</groupId>
@@ -156,6 +175,17 @@
             <dependency>
                 <groupId>net.sf.ehcache</groupId>
                 <artifactId>ehcache</artifactId>
+            </dependency>
+            <!-- mapStruct 对象转换 -->
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-jdk8</artifactId>
+                <version>${mapstruct.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-processor</artifactId>
+                <version>${mapstruct.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
